@@ -11,6 +11,11 @@ IMAGE_URL = ''
 IMAGE_PATH = ''
 IMAGE_NAME = 'kuechi_menu.jpg'
 
+CROP_X = 50
+CROP_Y = 300
+CROP_H = 2000
+CROP_W = 550
+
 
 def post_message_to_slack():
     message_payload = {
@@ -32,7 +37,7 @@ def post_message_to_slack():
 
 
 def main():
-    subprocess.call(['wkhtmltoimage', KUECHI_MENU_URL, '%s%s' % (IMAGE_PATH, IMAGE_NAME)])
+    subprocess.call(['wkhtmltoimage', '--crop-h', '%s' % CROP_H, '--crop-w', '%s' % CROP_W, '--crop-x', '%s' % CROP_X, '--crop-y', '%s' % CROP_Y, KUECHI_MENU_URL, '%s%s' % (IMAGE_PATH, IMAGE_NAME)])
     post_message_to_slack()
 
 
