@@ -5,19 +5,7 @@ import requests
 
 from menu import Menu
 
-KUECHI_MENU_URL = 'http://derküchenmeister.de/?page_id=16'
 SLACK_HOOK_URL = ''
-SLACK_MESSAGE_TEXT = 'Küchis Speiseplan für diese Woche'
-
-IMAGE_URL = ''
-IMAGE_PATH = ''
-IMAGE_NAME = 'kuechi_menu.jpg'
-
-CROP_X = 50
-CROP_Y = 300
-CROP_H = 2000
-CROP_W = 550
-
 
 def post_message_to_slack():
     # message_payload = {
