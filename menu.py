@@ -97,9 +97,7 @@ class Menu:
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
-                    'text': f'''*{day}:*
-                    {''.join([dish.create_slack_message() for dish in dishes])}
-                    '''
+                    'text': f'*{day}:*\n{''.join([dish.create_slack_message() for dish in dishes])}\n'
                 }
             }
             message_payload.get('blocks').append(block)
