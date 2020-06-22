@@ -84,7 +84,7 @@ class Menu:
 
     def create_slack_message(self):
         message_payload = {
-            'text': '*%s*' % 'Küchis Speiseplan für diese Woche',
+            'text': '*<%s|%s>*' % (self.URL, 'Küchis Speiseplan für diese Woche'),
             'blocks': []
         }
         for day, dishes in self.menu.items():
@@ -92,7 +92,7 @@ class Menu:
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
-                    'text': f'*{day}:*\n{''.join([dish.create_slack_message() for dish in dishes])}\n'
+                    'text': f'*{day}:*\n{"".join([dish.create_slack_message() for dish in dishes])}\n'
                 }
             }
             message_payload.get('blocks').append(block)
