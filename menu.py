@@ -65,11 +65,6 @@ class Menu:
 
         self.create_dish(current_dishes, current_day)
 
-        for day, dishes in self.menu.items():
-            print(day)
-            for dish in dishes:
-                print(dish)
-
     def create_dish(self, current_dishes: dict, current_day: str):
         if current_dishes and current_day:
             dishes_list = []
